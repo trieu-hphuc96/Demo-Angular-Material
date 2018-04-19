@@ -1,0 +1,33 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css'; /* theme for Angular Material */
+
+.mat-form-field{
+    width: 30%;
+    margin-right: 15px;
+}
+
+.full-width{
+    width: 100%;
+}
+
+.form-control{
+    width: 100%;
+    margin: 7px 0px;
+}
+
+.example-additional-selection {
+    opacity: 0.75;
+    font-size: 0.75em;
+}
+
+.example-panel-red .mat-select-content {
+    background: rgba(255, 0, 0, 0.5);
+}
+
+.example-panel-green .mat-select-content {
+    background: rgba(0, 255, 0, 0.5);
+}
+
+.example-panel-blue .mat-select-content {
+    background: rgba(0, 0, 255, 0.5);
+}

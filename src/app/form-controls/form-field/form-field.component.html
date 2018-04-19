@@ -1,0 +1,97 @@
+<h3>Sync color, size and floatLabel and show/hide RequiredMarker</h3>
+<form [formGroup]="options" [style.fontSize.px]="getFontSize()">
+  <mat-checkbox class="form-control" formControlName="hideRequired">Hide required marker</mat-checkbox>
+  <div class="form-control">
+    <label>Float label: </label>
+    <div class="form-control">
+      <mat-radio-group formControlName="floatLabel">
+        <mat-radio-button value="auto">Auto</mat-radio-button>
+        <mat-radio-button value="always">Always</mat-radio-button>
+        <mat-radio-button value="never">Never</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div>
+      <mat-form-field 
+      [color]="options.value.color"
+      [floatLabel]="options.value.floatLabel"
+      >
+        <mat-select placeholder="Color" formControlName="color">
+          <mat-option value="primary">Primary</mat-option>
+          <mat-option value="accent">Accent</mat-option>
+          <mat-option value="warn">Warn</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+  <mat-form-field 
+  [color]="options.value.color"
+  [floatLabel]="options.value.floatLabel"
+  >
+    <input matInput type="number" placeholder="Font size (px)" formControlName="fontSize" min="16">
+    <mat-error *ngIf="options.get('fontSize')?.invalid">Min size: 16px</mat-error>
+  </mat-form-field>
+
+  <mat-form-field 
+  [hideRequiredMarker]="options.value.hideRequired" 
+  [floatLabel]="options.value.floatLabel" 
+  hintLabel="Max 10 characters"
+  [color]="options.value.color"
+  >
+    <input matInput #input1 maxlength="10" placeholder="Simple placeholder" required>
+    <mat-hint align="end">{{input1.value?.length || 0}}/10</mat-hint>
+  </mat-form-field>
+  
+  <mat-form-field 
+  [floatLabel]="options.value.floatLabel"
+  [color]="options.value.color"
+  >
+    <mat-label>Both a label and a placeholder</mat-label>
+    <input matInput placeholder="Simple placeholder">
+  </mat-form-field>
+  
+  <mat-form-field class="full-width" 
+  [hideRequiredMarker]="options.value.hideRequired" 
+  [floatLabel]="options.value.floatLabel"
+  [color]="options.value.color"
+  >
+    <mat-select required>
+      <mat-option>-- None --</mat-option>
+      <mat-option value="option">Option</mat-option>
+    </mat-select>
+    <mat-placeholder>
+      <mat-icon>favorite</mat-icon>
+      <b> Fancy</b>
+      <i> placeholder</i>
+    </mat-placeholder>
+  </mat-form-field>
+</form>
+
+<h3>Validation</h3>
+<mat-form-field hintLabel="Have validation for required and email">
+  <input matInput placeholder="Enter your email" [formControl]="email" required>
+  <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+</mat-form-field>
+
+<mat-form-field class="example-full-width">
+  <input matInput placeholder="Email" [formControl]="email"
+         [errorStateMatcher]="matcher">
+  <mat-hint>Errors appear instantly!</mat-hint>
+  <mat-error *ngIf="email.hasError('email') && !email.hasError('required')">
+    Please enter a valid email address
+  </mat-error>
+  <mat-error *ngIf="email.hasError('required')">
+    Email is <strong>required</strong>
+  </mat-error>
+</mat-form-field>
+
+<h3>Password and Amount</h3>
+<mat-form-field>
+  <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'">
+  <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+</mat-form-field>
+
+<mat-form-field color="accent">
+  <input matInput placeholder="Amount" type="number" class="right-align">
+  <span matPrefix>$&nbsp;</span>
+  <span matSuffix>.00</span>
+</mat-form-field>
