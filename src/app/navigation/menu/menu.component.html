@@ -1,0 +1,54 @@
+<h3>Menu</h3>
+<button mat-raised-button [matMenuTriggerFor]="menu1">Menu 1</button>
+<mat-menu #menu1="matMenu" [overlapTrigger]="false">
+  <button mat-menu-item>Item 1</button>
+  <button mat-menu-item>Item 2</button>
+</mat-menu>
+
+<button mat-raised-button [matMenuTriggerFor]="menu2">Menu 2</button>
+<mat-menu #menu2="matMenu" yPosition="above">
+  <button mat-menu-item>
+    <mat-icon>dialpad</mat-icon>
+    <span>Redial</span>
+  </button>
+  <button mat-menu-item disabled>
+    <mat-icon>voicemail</mat-icon>
+    <span>Check voicemail</span>
+  </button>
+  <button mat-menu-item>
+    <mat-icon>notifications_off</mat-icon>
+    <span>Disable alerts</span>
+  </button>
+</mat-menu>
+
+<h3>Nested menu</h3>
+<mat-menu #rootMenu="matMenu">
+  <button mat-menu-item [matMenuTriggerFor]="subMenu">Power</button>
+  <button mat-menu-item>System settings</button>
+</mat-menu>
+
+<mat-menu #subMenu="matMenu">
+  <button mat-menu-item>Shut down</button>
+  <button mat-menu-item>Restart</button>
+  <button mat-menu-item>Hibernate</button>
+</mat-menu>
+
+<button mat-icon-button [matMenuTriggerFor]="rootMenu">
+  <mat-icon>more_vert</mat-icon>
+</button>
+
+<h3>Passing data to menu item</h3>
+<mat-menu #appMenu="matMenu">
+  <ng-template matMenuContent let-name="name">
+    <button mat-menu-item>Settings</button>
+    <button mat-menu-item>Log off {{name}}</button>
+  </ng-template>
+</mat-menu>
+
+<button mat-icon-button [matMenuTriggerFor]="appMenu" [matMenuTriggerData]="{name: 'Sally'}">
+  <mat-icon>more_vert</mat-icon>
+</button>
+
+<button mat-icon-button [matMenuTriggerFor]="appMenu" [matMenuTriggerData]="{name: 'Bob'}">
+  <mat-icon>more_vert</mat-icon>
+</button>

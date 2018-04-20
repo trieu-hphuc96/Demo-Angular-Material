@@ -1,24 +1,41 @@
-<div class = "component">
-  <app-autocomplete></app-autocomplete>
+<div #abc></div>
+<button #topOfPage class="main-button" mat-raised-button color="primary" (click)="showFormControls = !showFormControls">Form Controls</button>
+<div *ngIf="showFormControls">
+  <div class="component">
+    <app-autocomplete></app-autocomplete>
+  </div>
+  <div class="component">
+    <app-checkbox></app-checkbox>
+  </div>
+  <div class="component">
+    <app-datepicker></app-datepicker>
+  </div>
+  <div class="component">
+    <app-form-field></app-form-field>
+  </div>
+  <div class="component">
+    <app-radio-button></app-radio-button>
+  </div>
+  <div class="component">
+    <app-select></app-select>
+  </div>
+  <div class="component">
+    <app-slider></app-slider>
+  </div>
+  <div class="component">
+    <app-slider-toggle></app-slider-toggle>
+  </div>
 </div>
-<div class = "component">
-  <app-checkbox></app-checkbox>
-</div>
-<div class = "component">
-  <app-datepicker></app-datepicker>
-</div>
-<div class = "component">
-  <app-form-field></app-form-field>
-</div>
-<div class = "component">
-  <app-radio-button></app-radio-button>
-</div>
-<div class = "component">
-  <app-select></app-select>
-</div>
-<div class = "component">
-  <app-slider></app-slider>
-</div>
-<div class = "component">
-  <app-slider-toggle></app-slider-toggle>
+
+<button class="main-button" mat-raised-button color="primary" (click)="showNavigation = !showNavigation">Navigation</button>
+<div *ngIf="showNavigation">
+  <div class="component">
+    <app-menu></app-menu>
+  </div>
+  <div class="component">
+    <app-sidenav></app-sidenav>
+  </div>
+  <div class="component">
+    <app-toolbar></app-toolbar>
+  </div>
 </div>

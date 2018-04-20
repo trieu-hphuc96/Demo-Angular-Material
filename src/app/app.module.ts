@@ -16,7 +16,12 @@ import {
   ErrorStateMatcher,
   ShowOnDirtyErrorStateMatcher,
   MatSliderModule,
-  MatSlideToggleModule
+  MatSlideToggleModule,
+  MatButtonModule,
+  MatMenuModule,
+  MatSidenavModule,
+  MatToolbarModule,
+  MatListModule
  } from '@angular/material/';
 
 import { AppComponent } from './app.component';
@@ -30,6 +35,11 @@ import { RadioButtonComponent } from './form-controls/radio-button/radio-button.
 import { SelectComponent } from './form-controls/select/select.component';
 import { SliderComponent } from './form-controls/slider/slider.component';
 import { SliderToggleComponent } from './form-controls/slider-toggle/slider-toggle.component';
+import { MenuComponent } from './navigation/menu/menu.component';
+import { SidenavComponent } from './navigation/sidenav/sidenav.component';
+import { ToolbarComponent } from './navigation/toolbar/toolbar.component';
+import { MediaMatcher } from '@angular/cdk/layout';
+import { ScrollToModule } from 'ng2-scroll-to-el';
 
 
 @NgModule({
@@ -43,7 +53,10 @@ import { SliderToggleComponent } from './form-controls/slider-toggle/slider-togg
     RadioButtonComponent,
     SelectComponent,
     SliderComponent,
-    SliderToggleComponent
+    SliderToggleComponent,
+    MenuComponent,
+    SidenavComponent,
+    ToolbarComponent
     //end need for Angular Material
   ],
   imports: [
@@ -62,13 +75,20 @@ import { SliderToggleComponent } from './form-controls/slider-toggle/slider-togg
     MatSelectModule,
     MatIconModule,
     MatSliderModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    MatButtonModule,
+    MatMenuModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatListModule,
     //end need for Angular Material
+    ScrollToModule.forRoot() //for scrolling to element
   ],
 
   providers: [
-    {provide: MAT_DATE_LOCALE, useValue: 'vi-VN'}, //change format for datepicker
-    {provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher} // for instantly show errors when the input is dirty and invalid
+    {provide: MAT_DATE_LOCALE, useValue: 'vi-VN'}, //globally format date for mat datepicker to VN date 
+    {provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher}, // for instantly show errors when the input is dirty and invalid
+    MediaMatcher
   ],
 
   bootstrap: [AppComponent],

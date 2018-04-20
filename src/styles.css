@@ -31,3 +31,8 @@
 .example-panel-blue .mat-select-content {
     background: rgba(0, 0, 255, 0.5);
 }
+
+.main-button{
+    display: block !important;
+    margin-bottom: 15px !important;
+}
