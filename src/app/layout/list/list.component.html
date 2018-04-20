@@ -1,0 +1,43 @@
+<h3>List</h3>
+<mat-list dense>
+  <mat-list-item> 
+    Pepper 
+  </mat-list-item>
+
+<mat-divider [inset]="true"></mat-divider>
+  <h3 mat-subheader>Folders</h3>
+  <mat-list-item *ngFor="let folder of folders">
+    <mat-icon mat-list-icon>folder</mat-icon>
+    <h4 mat-line>{{folder.name}}</h4>
+    <p mat-line> {{folder.updated | date}} </p>
+  </mat-list-item>
+  <mat-divider [inset]="true"></mat-divider>
+  <h3 mat-subheader>Notes</h3>
+  <mat-list-item *ngFor="let note of notes">
+    <mat-icon mat-list-icon>note</mat-icon>
+    <h4 mat-line>{{note.name}}</h4>
+    <p mat-line> {{note.updated | date}} </p>
+  </mat-list-item>
+</mat-list>
+
+<mat-divider></mat-divider>
+<h3>Navigation List</h3>
+<mat-nav-list>
+  <mat-list-item *ngFor="let link of links">
+    <a matLine href="#">{{ link }}</a>
+    <button mat-icon-button>
+      <mat-icon>info</mat-icon>
+    </button>
+  </mat-list-item>
+</mat-nav-list>
+
+<mat-divider></mat-divider>
+<h3>Selection List</h3>
+<mat-selection-list #shoes>
+  <mat-list-option *ngFor="let shoe of typesOfShoes">
+    {{shoe}}
+  </mat-list-option>
+</mat-selection-list>
+<p>
+  Options selected: {{shoes.selectedOptions.selected.length}}
+</p>

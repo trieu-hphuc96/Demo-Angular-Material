@@ -39,3 +39,28 @@
     <app-toolbar></app-toolbar>
   </div>
 </div>
+
+<button class="main-button" mat-raised-button color="primary" (click)="showLayout = !showLayout">Layout</button>
+<div *ngIf="showLayout">
+  <div class="component">
+    <app-card></app-card>
+  </div>
+  <div class="component">
+    <app-divider></app-divider>
+  </div>
+  <div class="component">
+    <app-expansion-panel></app-expansion-panel>
+  </div>
+  <div class="component">
+    <app-grid-list></app-grid-list>
+  </div>
+  <div class="component">
+    <app-list></app-list>
+  </div>
+  <div class="component">
+    <app-stepper></app-stepper>
+  </div>
+  <div class="component">
+    <app-tabs></app-tabs>
+  </div>
+</div>

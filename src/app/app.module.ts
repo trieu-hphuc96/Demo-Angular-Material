@@ -21,7 +21,13 @@ import {
   MatMenuModule,
   MatSidenavModule,
   MatToolbarModule,
-  MatListModule
+  MatListModule,
+  MatCardModule,
+  MatDividerModule,
+  MatExpansionModule,
+  MatGridListModule,
+  MatStepperModule,
+  MatTabsModule
  } from '@angular/material/';
 
 import { AppComponent } from './app.component';
@@ -40,6 +46,13 @@ import { SidenavComponent } from './navigation/sidenav/sidenav.component';
 import { ToolbarComponent } from './navigation/toolbar/toolbar.component';
 import { MediaMatcher } from '@angular/cdk/layout';
 import { ScrollToModule } from 'ng2-scroll-to-el';
+import { CardComponent } from './layout/card/card.component';
+import { DividerComponent } from './layout/divider/divider.component';
+import { ExpansionPanelComponent } from './layout/expansion-panel/expansion-panel.component';
+import { GridListComponent } from './layout/grid-list/grid-list.component';
+import { ListComponent } from './layout/list/list.component';
+import { StepperComponent } from './layout/stepper/stepper.component';
+import { TabsComponent } from './layout/tabs/tabs.component';
 
 
 @NgModule({
@@ -56,7 +69,14 @@ import { ScrollToModule } from 'ng2-scroll-to-el';
     SliderToggleComponent,
     MenuComponent,
     SidenavComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    CardComponent,
+    DividerComponent,
+    ExpansionPanelComponent,
+    GridListComponent,
+    ListComponent,
+    StepperComponent,
+    TabsComponent
     //end need for Angular Material
   ],
   imports: [
@@ -81,6 +101,12 @@ import { ScrollToModule } from 'ng2-scroll-to-el';
     MatSidenavModule,
     MatToolbarModule,
     MatListModule,
+    MatCardModule,
+    MatDividerModule,
+    MatExpansionModule,
+    MatGridListModule,
+    MatStepperModule,
+    MatTabsModule,
     //end need for Angular Material
     ScrollToModule.forRoot() //for scrolling to element
   ],

@@ -11,7 +11,7 @@ import { EventEmitter } from '@angular/core';
 export class SidenavComponent implements OnInit {
 
   events = [];
-  
+
   showFiller = false;
 
   options: FormGroup;
@@ -21,23 +21,22 @@ export class SidenavComponent implements OnInit {
   fillerNav = Array(20).fill(0).map((_, i) => `Nav Item ${i + 1}`);
 
   fillerContent = Array(50).fill(0).map(() =>
-      `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+    `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`);
 
   private _mobileQueryListener: () => void;
-  
+
   @Output() topOfPage = new EventEmitter<boolean>();
   showResponsiveForMobile = false;
 
   constructor(
     fb: FormBuilder,
-    changeDetectorRef: ChangeDetectorRef, 
+    changeDetectorRef: ChangeDetectorRef,
     media: MediaMatcher,
-  ) 
-  {
+  ) {
     // for custom position of sidenav
     this.options = fb.group({
       'fixed': false,
@@ -58,10 +57,12 @@ export class SidenavComponent implements OnInit {
   ngOnInit() {
   }
 
-  changeShowResponsiveForMobile(){
+  changeShowResponsiveForMobile() {
     this.showResponsiveForMobile = !this.showResponsiveForMobile;
 
-    //scroll to top smoothly
-    window.scrollTo({ left: 0, top: 0, behavior: 'smooth' });
+    if (this.showResponsiveForMobile) {
+      //scroll to top smoothly
+      window.scrollTo({ left: 0, top: 0, behavior: 'smooth' });
+    }
   }
 }
