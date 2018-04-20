@@ -27,7 +27,9 @@ import {
   MatExpansionModule,
   MatGridListModule,
   MatStepperModule,
-  MatTabsModule
+  MatTabsModule,
+  MatButtonToggleModule,
+  MatChipsModule
  } from '@angular/material/';
 
 import { AppComponent } from './app.component';
@@ -53,6 +55,12 @@ import { GridListComponent } from './layout/grid-list/grid-list.component';
 import { ListComponent } from './layout/list/list.component';
 import { StepperComponent } from './layout/stepper/stepper.component';
 import { TabsComponent } from './layout/tabs/tabs.component';
+import { ButtonComponent } from './buttons-indicators/button/button.component';
+import { ButtonToggleComponent } from './buttons-indicators/button-toggle/button-toggle.component';
+import { ChipsComponent } from './buttons-indicators/chips/chips.component';
+import { IconComponent } from './buttons-indicators/icon/icon.component';
+import { ProgressSpinnerComponent } from './buttons-indicators/progress-spinner/progress-spinner.component';
+import { ProgressBarComponent } from './buttons-indicators/progress-bar/progress-bar.component';
 
 
 @NgModule({
@@ -76,7 +84,13 @@ import { TabsComponent } from './layout/tabs/tabs.component';
     GridListComponent,
     ListComponent,
     StepperComponent,
-    TabsComponent
+    TabsComponent,
+    ButtonComponent,
+    ButtonToggleComponent,
+    ChipsComponent,
+    IconComponent,
+    ProgressSpinnerComponent,
+    ProgressBarComponent
     //end need for Angular Material
   ],
   imports: [
@@ -107,6 +121,8 @@ import { TabsComponent } from './layout/tabs/tabs.component';
     MatGridListModule,
     MatStepperModule,
     MatTabsModule,
+    MatButtonToggleModule,
+    MatChipsModule,
     //end need for Angular Material
     ScrollToModule.forRoot() //for scrolling to element
   ],

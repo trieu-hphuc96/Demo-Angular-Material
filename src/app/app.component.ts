@@ -9,6 +9,7 @@ export class AppComponent {
   title = 'app';
   showFormControls = false;
   showNavigation = false;
+  showButtonsAndIndicators = false;
 
   constructor() {
   }

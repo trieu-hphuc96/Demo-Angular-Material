@@ -64,3 +64,22 @@
     <app-tabs></app-tabs>
   </div>
 </div>
+
+<button class="main-button" mat-raised-button color="primary" (click)="showButtonsAndIndicators = !showButtonsAndIndicators">Buttons & Indicators</button>
+<div *ngIf="showButtonsAndIndicators">
+  <div class="component">
+    <app-button></app-button>
+  </div>
+  <div class="component">
+    <app-button-toggle></app-button-toggle>
+  </div>
+  <div class="component">
+    <app-chips></app-chips>
+  </div>
+  <div class="component">
+  </div>
+  <div class="component">
+  </div>
+  <div class="component">
+  </div>
+</div>
