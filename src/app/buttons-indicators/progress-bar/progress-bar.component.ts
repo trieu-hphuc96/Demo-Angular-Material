@@ -6,6 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./progress-bar.component.css']
 })
 export class ProgressBarComponent implements OnInit {
+  
+  color = 'primary';
+  mode = 'determinate';
+  value = 50;
 
   constructor() { }
 

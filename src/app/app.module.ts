@@ -29,7 +29,9 @@ import {
   MatStepperModule,
   MatTabsModule,
   MatButtonToggleModule,
-  MatChipsModule
+  MatChipsModule,
+  MatProgressSpinnerModule,
+  MatProgressBarModule
  } from '@angular/material/';
 
 import { AppComponent } from './app.component';
@@ -58,7 +60,6 @@ import { TabsComponent } from './layout/tabs/tabs.component';
 import { ButtonComponent } from './buttons-indicators/button/button.component';
 import { ButtonToggleComponent } from './buttons-indicators/button-toggle/button-toggle.component';
 import { ChipsComponent } from './buttons-indicators/chips/chips.component';
-import { IconComponent } from './buttons-indicators/icon/icon.component';
 import { ProgressSpinnerComponent } from './buttons-indicators/progress-spinner/progress-spinner.component';
 import { ProgressBarComponent } from './buttons-indicators/progress-bar/progress-bar.component';
 
@@ -88,7 +89,6 @@ import { ProgressBarComponent } from './buttons-indicators/progress-bar/progress
     ButtonComponent,
     ButtonToggleComponent,
     ChipsComponent,
-    IconComponent,
     ProgressSpinnerComponent,
     ProgressBarComponent
     //end need for Angular Material
@@ -123,6 +123,8 @@ import { ProgressBarComponent } from './buttons-indicators/progress-bar/progress
     MatTabsModule,
     MatButtonToggleModule,
     MatChipsModule,
+    MatProgressSpinnerModule,
+    MatProgressBarModule,
     //end need for Angular Material
     ScrollToModule.forRoot() //for scrolling to element
   ],
