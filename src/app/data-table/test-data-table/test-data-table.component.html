@@ -1,0 +1,15 @@
+<mat-table
+  #table
+  [dataSource]="dataSource">
+  
+  <ng-container cdkColumnDef="firstName">
+    <mat-header-cell *cdkHeaderCellDef> First Name </mat-header-cell>
+    <mat-cell *cdkCellDef="let row"> {{row.firstName}} </mat-cell>
+  </ng-container>
+  
+  <mat-header-row *cdkHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *cdkRowDef="let row; columns: displayedColumns;"></mat-row>
+  
+</mat-table>
+
+<button mat-raised-button (click)="addData()">Add</button>

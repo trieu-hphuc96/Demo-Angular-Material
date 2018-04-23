@@ -96,3 +96,16 @@
     <app-tooltip></app-tooltip>
   </div>
 </div>
+
+<button class="main-button" mat-raised-button color="primary" (click)="showDataTable = !showDataTable">Data Table</button>
+<div *ngIf="showDataTable">
+  <div class="component">
+    <app-data-table></app-data-table>
+  </div>
+  <div class="component">
+    <app-test-data-table></app-test-data-table>
+  </div>
+  <div class="component">
+    <app-data-input-table></app-data-input-table>
+  </div>
+</div>

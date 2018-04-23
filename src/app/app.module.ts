@@ -34,7 +34,10 @@ import {
   MatProgressBarModule,
   MatDialogModule,
   MatSnackBarModule,
-  MatTooltipModule
+  MatTooltipModule,
+  MatTableModule,
+  MatPaginatorModule,
+  MatSortModule
  } from '@angular/material/';
 
 import { AppComponent } from './app.component';
@@ -68,6 +71,10 @@ import { ProgressBarComponent } from './buttons-indicators/progress-bar/progress
 import { DialogComponent, DialogOverviewExampleDialog } from './popups-and-modals/dialog/dialog.component';
 import { SnackbarComponent, PizzaPartyComponent } from './popups-and-modals/snackbar/snackbar.component';
 import { TooltipComponent } from './popups-and-modals/tooltip/tooltip.component';
+import { DataTableComponent } from './data-table/data-table.component';
+import { TestDataTableComponent } from './data-table/test-data-table/test-data-table.component';
+import { CdkTableModule } from '@angular/cdk/table';
+import { DataInputTableComponent } from './data-table/data-input-table/data-input-table.component';
 
 
 @NgModule({
@@ -101,7 +108,7 @@ import { TooltipComponent } from './popups-and-modals/tooltip/tooltip.component'
     DialogOverviewExampleDialog,//for dialog
     SnackbarComponent,
     PizzaPartyComponent,//for snackbar
-    TooltipComponent
+    TooltipComponent, DataTableComponent, TestDataTableComponent, DataInputTableComponent
     //end need for Angular Material
   ],
   imports: [
@@ -139,6 +146,10 @@ import { TooltipComponent } from './popups-and-modals/tooltip/tooltip.component'
     MatDialogModule,
     MatSnackBarModule,
     MatTooltipModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    CdkTableModule,
     //end need for Angular Material
     ScrollToModule.forRoot() //for scrolling to element
   ],
