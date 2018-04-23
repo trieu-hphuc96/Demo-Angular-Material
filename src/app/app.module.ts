@@ -31,7 +31,10 @@ import {
   MatButtonToggleModule,
   MatChipsModule,
   MatProgressSpinnerModule,
-  MatProgressBarModule
+  MatProgressBarModule,
+  MatDialogModule,
+  MatSnackBarModule,
+  MatTooltipModule
  } from '@angular/material/';
 
 import { AppComponent } from './app.component';
@@ -62,6 +65,9 @@ import { ButtonToggleComponent } from './buttons-indicators/button-toggle/button
 import { ChipsComponent } from './buttons-indicators/chips/chips.component';
 import { ProgressSpinnerComponent } from './buttons-indicators/progress-spinner/progress-spinner.component';
 import { ProgressBarComponent } from './buttons-indicators/progress-bar/progress-bar.component';
+import { DialogComponent, DialogOverviewExampleDialog } from './popups-and-modals/dialog/dialog.component';
+import { SnackbarComponent, PizzaPartyComponent } from './popups-and-modals/snackbar/snackbar.component';
+import { TooltipComponent } from './popups-and-modals/tooltip/tooltip.component';
 
 
 @NgModule({
@@ -90,7 +96,12 @@ import { ProgressBarComponent } from './buttons-indicators/progress-bar/progress
     ButtonToggleComponent,
     ChipsComponent,
     ProgressSpinnerComponent,
-    ProgressBarComponent
+    ProgressBarComponent,
+    DialogComponent,
+    DialogOverviewExampleDialog,//for dialog
+    SnackbarComponent,
+    PizzaPartyComponent,//for snackbar
+    TooltipComponent
     //end need for Angular Material
   ],
   imports: [
@@ -125,6 +136,9 @@ import { ProgressBarComponent } from './buttons-indicators/progress-bar/progress
     MatChipsModule,
     MatProgressSpinnerModule,
     MatProgressBarModule,
+    MatDialogModule,
+    MatSnackBarModule,
+    MatTooltipModule,
     //end need for Angular Material
     ScrollToModule.forRoot() //for scrolling to element
   ],
@@ -136,6 +150,11 @@ import { ProgressBarComponent } from './buttons-indicators/progress-bar/progress
   ],
 
   bootstrap: [AppComponent],
+
+  entryComponents: [
+    DialogOverviewExampleDialog,
+    PizzaPartyComponent
+  ]
 
 })
 export class AppModule { }

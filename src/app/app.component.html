@@ -83,3 +83,16 @@
     <app-progress-spinner></app-progress-spinner>
   </div>
 </div>
+
+<button class="main-button" mat-raised-button color="primary" (click)="showPopupsAndModals = !showPopupsAndModals">Popups & Modals</button>
+<div *ngIf="showPopupsAndModals">
+  <div class="component">
+    <app-dialog></app-dialog>
+  </div>
+  <div class="component">
+    <app-snackbar></app-snackbar>
+  </div>
+  <div class="component">
+    <app-tooltip></app-tooltip>
+  </div>
+</div>
